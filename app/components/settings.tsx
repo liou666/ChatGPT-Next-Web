@@ -915,7 +915,7 @@ export function Settings() {
             </ListItem>
           )}
 
-          {!accessStore.hideUserApiKey && (
+          {/* {!accessStore.hideUserApiKey && (
             <>
               {
                 // Conditionally render the following ListItem based on clientConfig.isApp
@@ -1164,7 +1164,7 @@ export function Settings() {
                 )
               }
             ></input>
-          </ListItem>
+          </ListItem> */}
         </List>
 
         <List>

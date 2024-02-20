@@ -74,7 +74,6 @@ export const getServerSideConfig = () => {
   console.log(
     `[Server Config] using ${randomIndex + 1} of ${apiKeys.length} api key`,
   );
-
   return {
     baseUrl: process.env.BASE_URL,
     apiKey,

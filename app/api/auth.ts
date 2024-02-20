@@ -54,6 +54,7 @@ export function auth(req: NextRequest, modelProvider: ModelProvider) {
   }
 
   // if user does not provide an api key, inject system api key
+  console.log(2222);
   if (!apiKey) {
     const serverConfig = getServerSideConfig();
 
@@ -63,6 +64,7 @@ export function auth(req: NextRequest, modelProvider: ModelProvider) {
         : serverConfig.isAzure
         ? serverConfig.azureApiKey
         : serverConfig.apiKey;
+    console.log("systemApiKey", systemApiKey);
     if (systemApiKey) {
       console.log("[Auth] use system api key");
       req.headers.set("Authorization", `Bearer ${systemApiKey}`);
