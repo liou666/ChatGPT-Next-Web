@@ -5,11 +5,12 @@ const id: PartialLocaleType = {
   WIP: "Coming Soon...",
   Error: {
     Unauthorized:
-      "Akses tidak diizinkan. Silakan [otorisasi](/#/auth) dengan memasukkan kode akses.",
+      "Akses tidak diizinkan, silakan masukkan kode akses atau masukkan kunci API OpenAI Anda. di halaman [autentikasi](/#/auth) atau di halaman [Pengaturan](/#/settings).",
   },
   Auth: {
     Title: "Diperlukan Kode Akses",
     Tips: "Masukkan kode akses di bawah",
+    SubTips: "Atau masukkan kunci API OpenAI Anda",
     Input: "Kode Akses",
     Confirm: "Konfirmasi",
     Later: "Nanti",
@@ -124,9 +125,10 @@ const id: PartialLocaleType = {
       },
       Clear: {
         Title: "Hapus Semua Data",
-        SubTitle: "Menghapus semua pesan dan pengaturan",
+        SubTitle: "Semua data yang tersimpan secara lokal akan dihapus",
         Action: "Hapus",
-        Confirm: "Anda yakin ingin menghapus semua pesan dan pengaturan?",
+        Confirm:
+          "Apakah Anda yakin ingin menghapus semua data yang tersimpan secara lokal?",
       },
     },
     Lang: {
@@ -159,6 +161,37 @@ const id: PartialLocaleType = {
     AutoGenerateTitle: {
       Title: "Hasilkan Judul Otomatis",
       SubTitle: "Hasilkan judul yang sesuai berdasarkan konten percakapan",
+    },
+    Sync: {
+      CloudState: "Pembaruan Terakhir",
+      NotSyncYet: "Belum disinkronkan",
+      Success: "Sinkronisasi Berhasil",
+      Fail: "Sinkronisasi Gagal",
+
+      Config: {
+        Modal: {
+          Title: "Konfigurasi Sinkronisasi",
+        },
+        SyncType: {
+          Title: "Tipe Sinkronisasi",
+          SubTitle: "Pilih layanan sinkronisasi favorit Anda",
+        },
+        Proxy: {
+          Title: "Aktifkan Proxy CORS",
+          SubTitle:
+            "Aktifkan Proxy untuk menghindari pembatasan atau pemblokiran lintas sumber",
+        },
+        ProxyUrl: {
+          Title: "Lokasi Titik Akhir Proxy CORS",
+          SubTitle: "Hanya berlaku untuk Proxy CORS bawaan untuk proyek ini",
+        },
+
+        WebDav: {
+          Endpoint: "Lokasi Titik Akhir WebDAV",
+          UserName: "User Pengguna",
+          Password: "Kata Sandi",
+        },
+      },
     },
     SendKey: "Kirim",
     Theme: "Tema",
@@ -205,11 +238,6 @@ const id: PartialLocaleType = {
       SubTitle:
         "Jika panjang pesan melebihi batas yang ditentukan, pesan tersebut akan dikompresi",
     },
-    Token: {
-      Title: "Kunci API",
-      SubTitle: "Gunakan kunci Anda untuk melewati batas kode akses",
-      Placeholder: "Kunci API OpenAI",
-    },
     Usage: {
       Title: "Saldo Akun",
       SubTitle(used: any, total: any) {
@@ -218,15 +246,6 @@ const id: PartialLocaleType = {
       IsChecking: "Memeriksa...",
       Check: "Periksa",
       NoAccess: "Masukkan kunci API untuk memeriksa saldo",
-    },
-    AccessCode: {
-      Title: "Kode Akses",
-      SubTitle: "Kontrol akses diaktifkan",
-      Placeholder: "Diperlukan kode akses",
-    },
-    Endpoint: {
-      Title: "Endpoint",
-      SubTitle: "Harus dimulai dengan http(s):// untuk endpoint kustom",
     },
     Model: "Model",
     Temperature: {
@@ -265,8 +284,13 @@ const id: PartialLocaleType = {
     },
   },
   Copy: {
-    Success: "Berhasil disalin ke clipboard",
-    Failed: "Gagal menyalin, berikan izin untuk memberikan izin",
+    Success: "Tersalin ke clipboard",
+    Failed:
+      "Gagal menyalin, mohon berikan izin untuk mengakses clipboard atau Clipboard API tidak didukung (Tauri)",
+  },
+  Download: {
+    Success: "Konten berhasil diunduh ke direktori Anda.",
+    Failed: "Unduhan gagal.",
   },
   Context: {
     Toast: (x: any) => `Dengan ${x} promp kontekstual`,
@@ -342,10 +366,13 @@ const id: PartialLocaleType = {
     Edit: "Edit",
   },
   Exporter: {
+    Description: {
+      Title: "Hanya pesan setelah menghapus konteks yang akan ditampilkan",
+    },
     Model: "Model",
     Messages: "Pesan",
     Topic: "Topik",
-    Time: "Waktu",
+    Time: "Tanggal & Waktu",
   },
   URLCommand: {
     Code: "Kode akses terdeteksi dari url, konfirmasi untuk mendaftar ? ",
